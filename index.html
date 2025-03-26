@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect-K</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="setup-container" id="setup">
+      <h1>Налаштування гри</h1>
+
+      <label for="k">Скільки в ряд для перемоги (K):</label>
+      <select id="k" onchange="updateLimits()">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label for="rows">Кількість рядків (N):</label>
+      <input type="number" id="rows" min="4" max="10" value="6" />
+
+      <label for="cols">Кількість стовпців (M):</label>
+      <input type="number" id="cols" min="4" max="10" value="7" />
+
+      <label for="modeX">Гравець X:</label>
+      <select id="modeX">
+        <option value="human">Людина</option>
+        <option value="ai-easy">AI: Легкий</option>
+        <option value="ai-medium">AI: Середній</option>
+        <option value="ai-hard">AI: Складний</option>
+      </select>
+
+      <label for="modeO">Гравець O:</label>
+      <select id="modeO">
+        <option value="human">Людина</option>
+        <option value="ai-easy">AI: Легкий</option>
+        <option value="ai-medium">AI: Середній</option>
+        <option value="ai-hard">AI: Складний</option>
+      </select>
+
+      <button onclick="startGame()">Почати гру</button>
+    </div>
+
+    <div id="game" class="game hidden">
+      <h2 id="turn-info">Хід гравця X</h2>
+      <div id="board" class="board"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
